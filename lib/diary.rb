@@ -10,9 +10,7 @@ class Diary
   end
 
   def index
-    titles = @entries.map do |entry|
-      entry.title
-    end
+    titles = @entries.map(&:title)
     titles.join("\n")
   end
 end
