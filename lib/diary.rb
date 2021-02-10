@@ -1,7 +1,7 @@
 class Diary
   def initialize(entry_class = Entry)
-    @entry_class = entry_class
     @entries = []
+    @entry_class = entry_class
   end
 
   def add(title, body)
@@ -10,7 +10,9 @@ class Diary
   end
 
   def index
-    titles = @entries.map(&:title)
+    titles = @entries.map do |entry|
+      entry.title
+    end
     titles.join("\n")
   end
 end
